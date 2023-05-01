@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+#root,
+#__next {
+    isolation: isolate;
+}
+
+/*
+  Basic styling
+*/
+
+a,
+a:hover,
+a:visited,
+a:active {
+    text-decoration: none;
+    color: inherit;
+}
+
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    font-family: 'Inter', sans-serif;
+    display: grid;
+    place-content: center;
+    background-color: #f2e9e4;
+}
+
+.header{
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: rgb(46, 21, 65);
+    font-size: 4rem;
+    text-shadow: 1px 1px 3px;
+}
+
+.container {
+    min-height: 30rem;
+    display: grid;
+    place-content: center;
+    margin: 2rem;
+    padding: 2rem;
+    border-radius: 2rem;
+    border: 0.5rem solid #fff;
+    box-shadow: 0.3px 0.5px 0.6px hsl(22deg 12% 58% / 0.5),
+        0.7px 1.3px 1.5px -1.1px hsl(22deg 12% 58% / 0.43),
+        1.9px 3.8px 4.2px -2.3px hsl(22deg 12% 58% / 0.36),
+        5px 10px 11px -3.4px hsl(22deg 12% 58% / 0.29);
+}
+
+.quote-box {
+    background: hsl(0, 0%, 100%, .8);
+    padding: 1.75rem;
+    max-width: 30rem;
+    overflow-y: scroll;
+    font-size: 1rem;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.quote-box:hover {
+    background: hsla(232, 17%, 35%, 0.8);
+    color: #fff;
+}
+
+.quote-author {
+    font-weight: 600;
+    font-size: 0.9em;
+    text-align: right;
+    padding-top: 1em;
+}
+
+.quote-author::before {
+    content: '- ';
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+
+.button-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap:2rem;
+}
+.new-quote {
+    width: fit-content;
+    justify-self: center;
+    background: #4a4e68;
+    color: #fff;
+    border: 2px solid #fff;
+    border-radius: 0.5rem;
+    font-size: 0.8rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.1);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.new-quote:hover {
+    background: #CBCEED;
+    color: #4A4E68;
+    border: 2px solid #4A4E68;
+}
+
+.new-quote:active {
+    outline: 0;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3) 0 1px 3px 0 inset;
+    background: #6A4648;
+    color: #fff;
+    border: 2px solid #fff;
+}
+
+.new-quote i {
+    transition: transform 0.5s linear;
+}
+
+.new-quote:hover i {
+    transform: rotate(360deg);
+}
+
+/*
+  Responsive layout
+*/
+
+@media screen and (min-width: 45rem) {
+    .container {
+        min-width: 45rem;
+        min-height: 30rem;
+    }
+
+    .quote-box {
+        font-size: 1.25rem;
+    }
+}
