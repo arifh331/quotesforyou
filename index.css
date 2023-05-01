@@ -152,6 +152,19 @@ body {
     border: 2px solid #4A4E68;
 }
 
+.save:hover {
+  background-color: rgb(207, 255, 239);
+}
+.see-favs:hover {
+  background-color: rgb(255, 242, 207);
+
+}
+
+.remove-btn:hover {
+  background-color: rgb(255, 139, 139);
+
+}
+
 .new-quote:active {
     outline: 0;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3) 0 1px 3px 0 inset;
@@ -159,6 +172,8 @@ body {
     color: #fff;
     border: 2px solid #fff;
 }
+
+
 
 .new-quote i {
     transition: transform 0.5s linear;

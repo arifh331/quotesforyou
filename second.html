@@ -14,7 +14,7 @@
       referrerpolicy="no-referrer" />
   </head>
   <body>
-    <header class="header">Your Favs</header>
+    <header class="header">My Favorite Quotes</header>
     <div class="container">
         
         <figure class="quote-box">
@@ -24,15 +24,21 @@
       </a>
     </div>
     <div class="button-container">
+
+        <button class="new-quote new see-favs" onclick="randomQuote()">
+            Go to Home
+            <i class="fa-solid "></i>
+      
+          </button>
     <button class="new-quote new" onclick="randomQuote()">
       Next one
       <i class="fa-solid fa-rotate"></i>
 
     </button>
 
-        <button class="new-quote" onclick="redirectToPage()">
-           Return 
-          <i class="fa-solid"></i>
+        <button class="new-quote remove-btn" onclick="redirectHome()">
+           Remove 
+          <i class="fa-solid fa-minus"></i>
     </button>
   </div>
     <!-- To switch between the 'normal' and API version of the app, change src="quotes.js" below to src="quotes-api.js" -->

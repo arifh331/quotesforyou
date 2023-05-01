@@ -38,6 +38,11 @@ function redirectToSecond() {
 }
 
 
+function redirectHome(){
+  window.location.href = "./index.html"
+
+}
+
 
 ///Regular quotes
 
