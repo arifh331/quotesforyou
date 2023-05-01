@@ -2,6 +2,45 @@
 const quoteEl = document.querySelector(".quote-text");
 const authorEl = document.querySelector(".quote-author");
 
+let array_of_quotes = []
+
+
+
+
+function addQuote(){
+
+  //This array is adding in a object of current quote and current author
+  array_of_quotes.push({quote:quoteEl.textContent,author:authorEl.textContent})
+  bodybackgroundChanger()
+  backgroundChanger()
+  randomQuote()
+  
+
+  //Preping the array of quotes to go into local storage
+  let quotesString = JSON.stringify(array_of_quotes)
+  localStorage.setItem('quotes',quotesString)
+
+
+  
+}
+
+
+
+
+
+
+function removeQuote(){
+  console.log(array_of_quotes)
+
+const filteredArray = array_of_quotes.filter(obj => obj['author'] !== authorEl.textContent);
+
+  array_of_quotes = filteredArray;
+  //array_of_quotes.push({[quoteEl.textContent]:authorEl.textContent})
+
+  console.log(array_of_quotes);
+
+  favQuote()
+}
 
 
 
@@ -27,7 +66,7 @@ document.querySelector("body").style.background =
 }
 
 
-backgroundChanger()
+//backgroundChanger()
 
 
 
@@ -44,9 +83,9 @@ function redirectHome(){
 }
 
 
+
+
 ///Regular quotes
-
-
 async function randomQuote() {
   let response = await fetch("https://api.quotable.io/random");
   let data = await response.json();
@@ -61,6 +100,36 @@ async function randomQuote() {
 
 
 
+//This is the function when are at fav page 
 
 
-randomQuote();
+function favQuote(){
+  
+  var quotesString = localStorage.getItem('quotes');
+
+  array_of_quotes = JSON.parse(quotesString);
+
+  const randomIndex = Math.floor(Math.random() * array_of_quotes.length);
+
+  
+
+// Access the element at the random index
+  const randomElement = array_of_quotes[randomIndex];
+
+  quoteEl.textContent = randomElement.quote
+  authorEl.textContent=randomElement.author
+  backgroundChanger()
+  bodybackgroundChanger()
+}
+
+//randomQuote()
+if(window.location.pathname=='/index.html') {
+  randomQuote();
+}
+
+
+
+else {
+favQuote()
+}
+

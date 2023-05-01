@@ -72,10 +72,9 @@ body {
 .header{
     text-align: center;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    color: rgb(46, 21, 65);
+    color: rgb(65, 21, 53);
     font-size: 4rem;
-    text-shadow: 1px 1px 3px ;
-    margin: 0;
+    text-shadow: 1px 1px 3px;
     padding: 0;
 }
 
