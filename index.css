@@ -1,9 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
 
-/*
-  Josh's Custom CSS Reset
-  https://www.joshwcomeau.com/css/custom-css-reset/
-*/
+
+
 *,
 *::before,
 *::after {
@@ -76,14 +74,16 @@ body {
     font-family: Georgia, 'Times New Roman', Times, serif;
     color: rgb(46, 21, 65);
     font-size: 4rem;
-    text-shadow: 1px 1px 3px;
+    text-shadow: 1px 1px 3px ;
+    margin: 0;
+    padding: 0;
 }
 
 .container {
     min-height: 30rem;
     display: grid;
     place-content: center;
-    margin: 2rem;
+    margin: 0rem;
     padding: 2rem;
     border-radius: 2rem;
     border: 0.5rem solid #fff;
@@ -128,6 +128,7 @@ body {
     flex-direction: row;
     justify-content: center;
     gap:2rem;
+    margin-top:1rem;
 }
 .new-quote {
     width: fit-content;

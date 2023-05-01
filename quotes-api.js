@@ -27,8 +27,6 @@ document.querySelector("body").style.background =
 }
 
 
-
-//bodybackgroundChanger()
 backgroundChanger()
 
 
