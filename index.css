@@ -164,7 +164,7 @@ body {
     transition: transform 0.5s linear;
 }
 
-.new-quote:hover i {
+.new:hover i {
     transform: rotate(360deg);
 }
 

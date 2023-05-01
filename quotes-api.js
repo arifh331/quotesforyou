@@ -33,7 +33,9 @@ backgroundChanger()
 
 
 
-
+function redirectToSecond() {
+  window.location.href = "./second.html"
+}
 
 
 
