@@ -1,6 +1,13 @@
 
+//Name of file quotes-api.mjs
+
 const quoteEl = document.querySelector(".quote-text");
 const authorEl = document.querySelector(".quote-author");
+// import mongodb from 'mongodb'
+
+// console.log('this is before mongodb')
+// console.log(mongodb)
+
 
 let array_of_quotes = []
 
