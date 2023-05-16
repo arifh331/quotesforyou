@@ -1,22 +1,29 @@
-import express from 'express';
-import { fileURLToPath } from 'url';
-import { dirname, join } from 'path';
-import { createRequire } from 'module';
 
-const app = express();
-const require = createRequire(import.meta.url);
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+import { MongoClient } from 'mongodb';
 
-// Serve static files
-app.use(express.static(__dirname));
+const { ServerApiVersion } = MongoClient;
 
-// Define routes
-app.get('/', (req, res) => {
-  res.sendFile(join(__dirname, 'index.html'));
+const uri = "mongodb+srv://root:<password>@cluster0.0hjj5.mongodb.net/?retryWrites=true&w=majority";
+
+// Create a MongoClient with a MongoClientOptions object to set the Stable API version
+const client = new MongoClient(uri, {
+  serverApi: {
+    version: ServerApiVersion.v1,
+    strict: true,
+    deprecationErrors: true,
+  }
 });
 
-// Start the server
-app.listen(3000, () => {
-  console.log('Server is running on port 3000');
-});
+async function run() {
+  try {
+    // Connect the client to the server	(optional starting in v4.7)
+    await client.connect();
+    // Send a ping to confirm a successful connection
+    await client.db("admin").command({ ping: 1 });
+    console.log("Pinged your deployment. You successfully connected to MongoDB!");
+  } finally {
+    // Ensures that the client will close when you finish/error
+    await client.close();
+  }
+}
+run().catch(console.dir);

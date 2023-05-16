@@ -12,7 +12,12 @@ const authorEl = document.querySelector(".quote-author");
 let array_of_quotes = []
 
 //Random quote is called in the beginning 
-randomQuote()
+
+if (window.location.href == "./index.html") {
+  randomQuote()
+
+}
+
 
 
 
